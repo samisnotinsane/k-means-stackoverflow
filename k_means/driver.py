@@ -19,7 +19,7 @@ def printallrowattrib(data, attrib_name):
 
 # Treat as 'main' method.
 if __name__ == '__main__':
-    f_path = '/Users/sameenislam/Documents/Big_Data/cw2/sample_data/user_sample.xml'
+    f_path = 'user_sample.xml'
     data = getfile(f_path)
     printallrowattrib(data, 'reputation')
     data.close()
