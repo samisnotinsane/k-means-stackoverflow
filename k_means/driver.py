@@ -13,13 +13,12 @@ def getfile(file_path):
 def printallrowattrib(data, attrib_name):
     soup = BeautifulSoup(data, 'html.parser')
     all_rows = soup.find_all('row')
-    attrib_rows = soup.row[attrib_name]
-    for attrib_row in attrib_rows:
-        print(attrib_row)    
+    for attrib_row in all_rows:
+        print(attrib_row.get(attrib_name))    
 
 # Treat as 'main' method.
 if __name__ == '__main__':
-    f_path = 'user_sample.xml'
+    f_path = '/Users/sameenislam/Documents/Big_Data/cw2/sample_data/posts_sample.xml'
     data = getfile(f_path)
-    printallrowattrib(data, 'reputation')
+    printallrowattrib(data, 'owneruserid')
     data.close()
