@@ -20,10 +20,16 @@ def transformXmlToMap(line):
 
 # Treat as 'main' method.
 if __name__ == '__main__':
-    file_path = '/Users/sameenislam/Documents/Big_Data/cw2/sample_data/user_sample.xml'
+    # Specify attribute to extract.
+    targetattrib = 'OwnerUserId'
+    # Specify input file path.
+    file_path = '/Users/sameenislam/Documents/Big_Data/cw2/sample_data/posts_sample.xml'
     with open(file_path, "r") as f:
         for line in f:
             row_dict = transformXmlToMap(line)
-            aid = row_dict['AccountId']
-            print(aid)
+            try:
+                aid = row_dict[targetattrib]
+                print(aid)
+            except KeyError:
+                print('[WARN] No ' + targetattrib + ' found for row with Id: ' + row_dict['Id'])
     
