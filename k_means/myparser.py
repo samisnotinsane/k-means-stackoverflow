@@ -2,6 +2,8 @@
 ' Algorithm based on MRDPUtils in Mapreduce Design Patterns (O'Reilly): D. Miner & A. Shook.
 ' Parses XML row data from Stack Overflow.
 """
+from cluster import Cluster
+
 def transformXmlToMap(line):
     line_nowhitespace = line.strip() # Remove whitespaces.
     line_noxml = line_nowhitespace[5:-3] # Discard XML tag.
@@ -24,6 +26,11 @@ if __name__ == '__main__':
     targetattrib = 'OwnerUserId'
     # Specify input file path.
     file_path = '/Users/sameenislam/Documents/Big_Data/cw2/sample_data/posts_sample.xml'
+    # Specify number of clusters (K)
+    k = -1
+    
+    training_data = {}
+    row_dict = {}
     with open(file_path, "r") as f:
         for line in f:
             row_dict = transformXmlToMap(line)
@@ -32,4 +39,8 @@ if __name__ == '__main__':
                 print(aid)
             except KeyError:
                 print('[WARN] No ' + targetattrib + ' found for row with Id: ' + row_dict['Id'])
-    
+    f.close() # Close the file for safety.
+    # Initiate unsupervised learning.
+    print('[APPLICATION] Unsupervised learning in progress...')
+    print('[APPLICATION] Result:' + str(Cluster.k_means(k, training_data)) )
+    print('[APPLICATION] K-Means clustering complete.')
