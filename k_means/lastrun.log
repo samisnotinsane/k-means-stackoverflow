@@ -1,29 +1,41 @@
-DataFrame[value: string]
-+--------------------+
-|               value|
-+--------------------+
-|<row Id="190796" ...|
-|<row Id="190797" ...|
-|<row Id="190799" ...|
-|<row Id="190800" ...|
-|<row Id="190801" ...|
-|<row Id="190803" ...|
-|<row Id="190805" ...|
-|<row Id="190806" ...|
-|<row Id="190807" ...|
-|<row Id="190809" ...|
-|<row Id="190810" ...|
-|<row Id="190811" ...|
-|<row Id="190816" ...|
-|<row Id="190817" ...|
-|<row Id="190818" ...|
-|<row Id="190819" ...|
-|<row Id="190820" ...|
-|<row Id="190821" ...|
-|<row Id="190822" ...|
-|<row Id="190823" ...|
-+--------------------+
-only showing top 20 rows
-
-None
-Lines with row: 464,
+Total count: 464
+Parse completed in 0.072 seconds
+{'AboutMe': '&lt;p&gt;Game Programmer by day, experimental gameplay enthusiast '
+            'by night! &lt;/p&gt;&#xA;',
+ 'AccountId': '64671',
+ 'CreationDate': '2009-10-15T18:05:26.123',
+ 'DisplayName': 'vazor',
+ 'DownVotes': '0',
+ 'Id': '190796',
+ 'LastAccessDate': '2014-01-17T21:24:36.617',
+ 'Reputation': '59',
+ 'UpVotes': '229',
+ 'Views': '2',
+ 'WebsiteUrl': ''}
+{'AccountId': '662157',
+ 'CreationDate': '2009-10-15T18:06:43.980',
+ 'DisplayName': 'Mark',
+ 'DownVotes': '0',
+ 'Id': '190797',
+ 'LastAccessDate': '2009-12-13T15:44:55.333',
+ 'Reputation': '13',
+ 'UpVotes': '0',
+ 'Views': '2'}
+{'AccountId': '662158',
+ 'CreationDate': '2009-10-15T18:11:31.893',
+ 'DisplayName': 'dabadabadoo',
+ 'DownVotes': '0',
+ 'Id': '190799',
+ 'LastAccessDate': '2009-10-15T19:40:57.367',
+ 'Reputation': '3',
+ 'UpVotes': '0',
+ 'Views': '2'}
+{'AccountId': '662159',
+ 'CreationDate': '2009-10-15T18:22:39.250',
+ 'DisplayName': 'StefanC',
+ 'DownVotes': '0',
+ 'Id': '190800',
+ 'LastAccessDate': '2010-04-13T17:29:43.857',
+ 'Reputation': '11',
+ 'UpVotes': '0',
+ 'Views': '0'}
