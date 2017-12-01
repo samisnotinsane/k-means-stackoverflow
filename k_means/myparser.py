@@ -2,7 +2,7 @@
 ' Algorithm based on MRDPUtils in Mapreduce Design Patterns (O'Reilly): D. Miner & A. Shook.
 ' Parses XML row data from Stack Overflow.
 """
-from cluster import Cluster
+# from cluster import Cluster
 
 def transformXmlToMap(line):
     line_nowhitespace = line.strip() # Remove whitespaces.
@@ -41,6 +41,6 @@ if __name__ == '__main__':
                 print('[WARN] No ' + targetattrib + ' found for row with Id: ' + row_dict['Id'])
     f.close() # Close the file for safety.
     # Initiate unsupervised learning.
-    print('[APPLICATION] Unsupervised learning in progress...')
-    print('[APPLICATION] Result:' + str(Cluster.k_means(k, training_data)) )
-    print('[APPLICATION] K-Means clustering complete.')
+    # print('[APPLICATION] Unsupervised learning in progress...')
+    # print('[APPLICATION] Result:' + str(Cluster.k_means(k, training_data)) )
+    # print('[APPLICATION] K-Means clustering complete.')
