@@ -19,18 +19,17 @@ if __name__ == '__main__':
             i += 2
         return d
     
+    # Commonly used paths:
+    # /data/stackOverflow2017/Users.xml
+    # so2017/users_sample.xml
     users_path = "/Users/sameenislam/Documents/Big_Data/cw2/sample_data/user_sample.xml"
     conf = SparkConf().setAppName("rddparser")
     sc = SparkContext(conf=conf)
     raw_data = sc.textFile(users_path)
     print('Total count: ' + str(raw_data.count()))
-    xml_data = raw_data.map(transformXmlToMap)
+    xml_data = raw_data.map(transformXmlToMap).cache()
 
-    t0 = time()
-    user_rows = xml_data.take(5)
-    tt = time() - t0
-    print("Parse completed in {} seconds".format(round(tt,3)))
-    for x in range(0, 4):
-        pprint(user_rows[x])
-    
+    total_count = raw_data.count()
+    print('Total count: ' + str(total_count))
+    grouped_data = xml_data.groupByKey()
     
