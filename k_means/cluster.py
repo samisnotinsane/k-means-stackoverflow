@@ -1,40 +1,54 @@
-from random import *
-"""
-" Implementation of K-Means clustering algorithm
-" based on Andrew NG's lecture from Stanford University.
-" https://www.coursera.org/learn/machine-learning/lecture/93VPG/k-means-algorithm
-"""
-class Cluster():
+import numpy as np
+import matplotlib.pyplot as plt
 
-    def euclidian_distance(x, mu):
-        return x - mu
 
-    def minimise(x, mu):
-        return euclidian_distance(x[i], mu[k])
+class KMeans():
 
-    """
-    " x = unlabelled training set.
-    """
-    def k_means(K, x):
-        
-        if K < 0:
-            raise ValueError('[AGENT] k must be non-negative')
-        
-        # Initialise K centroids randomly across training set.
-        mu = sample(x, K)
-        m = len(training_set)
-        k = 1
-        mu_prev[k] = mu[k] 
-        while(mu[k] != mu_prev[k]):
-            # Cluster assignment step.
-            for i=1 to m:
-                # Compute norm and minimise for k.
-                c[i] = minimise(x[i], mu[k])
+    def euclidian(a, b):
+        return np.linalg.norm(a - b)
 
-            # Move centroid step
-            # for k to K:
-                
-            k++
-        
+    # Trains an unsupervised model using K-Means.
+    def train(dataset, k, epsilon=0):
+        history_centroids = []
+        dataset = np.loadtxt('durudataset.txt')
+        # dataset = dataset[:, 0:dataset.shape[1] - 1]
+        num_instances, num_features = dataset.map(lambda x,y:  x.shape)
+        prototypes = dataset[np.random.randint(0, num_instances - 1, size=k)]
+        history_centroids.append(prototypes)
+        prototypes_old = np.zeros(prototypes.shape)
+        belongs_to = np.zeros((num_instances, 1))
+        norm = dist_method(prototypes, prototypes_old)
+        iteration = 0
+        while norm > epsilon:
+            iteration += 1
+            norm = dist_method(prototypes, prototypes_old)
+            prototypes_old = prototypes
+            for index_instance, instance in enumerate(dataset):
+                dist_vec = np.zeros((k, 1))
+                for index_prototype, prototype in enumerate(prototypes):
+                    dist_vec[index_prototype] = dist_method(prototype,
+                                                            instance)
 
-        return -1
+                belongs_to[index_instance, 0] = np.argmin(dist_vec)
+
+            tmp_prototypes = np.zeros((k, num_features))
+
+        for index in range(len(prototypes)):
+            instances_close = [i for i in range(
+                len(belongs_to)) if belongs_to[i] == index]
+            prototype = np.mean(dataset[instances_close], axis=0)
+            # prototype = dataset[np.random.randint(0, num_instances, size=1)[0]]
+            tmp_prototypes[index, :] = prototype
+
+        prototypes = tmp_prototypes
+
+        history_centroids.append(tmp_prototypes)
+
+        # plot(dataset, history_centroids, belongs_to)
+
+        return prototypes, history_centroids, belongs_to
+
+
+class Graph():
+    def plot(dataset, centroid_history, point_owners):
+        pass

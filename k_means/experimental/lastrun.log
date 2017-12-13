@@ -1,0 +1,9 @@
+Parsing user data...
+User data parsing complete
+Parsing post data...
+Post data parsing complete
+Training K-Means model with K=4...
+Traceback (most recent call last):
+  File "/homes/si302/bigdata/cw2/10_12_17/rddparser.py", line 81, in <module>
+    plt.scatter(all_assigned[:,0], all_assigned[:,1], color=colours[i])
+IndexError: 0-d arrays can only use a single () or a list of newaxes (and a single ...) as an index
