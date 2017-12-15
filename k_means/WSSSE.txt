@@ -1,0 +1,7 @@
+k=2: maxIterations=0:  Within Set Sum of Squared Error = 777459717.555
+k=2: maxIterations=2:  Within Set Sum of Squared Error = 737140986.146
+k=2: maxIterations=4:  Within Set Sum of Squared Error = 814964569.592
+k:2: maxIterations=8:  Within Set Sum of Squared Error = 1129907125.51
+k=3: maxIterations=8:  Within Set Sum of Squared Error = 1129907125.51
+k=3: maxIterations=16: Within Set Sum of Squared Error = 974664008.438
+k=3: maxIterations=32: Within Set Sum of Squared Error = 1076123014.6
